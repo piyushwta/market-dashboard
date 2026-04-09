@@ -1,103 +1,159 @@
-Instrument Dashboard (React + TypeScript)
+# 📊 Instrument Dashboard
 
-A modern, responsive SaaS-style dashboard for exploring financial instruments with real-time updates, filtering, and watchlist functionality.
+A modern, responsive **SaaS-style financial dashboard** built using React and TypeScript.
+It allows users to explore instruments with real-time updates, filtering, and watchlist management.
 
-🚀 Features
-📈 Real-time price updates (simulated WebSocket)
-🔍 Search with debouncing
-🎯 Advanced filters (sector, market status, sorting)
-⭐ Watchlist management
-📱 Fully responsive (mobile + desktop)
-📊 Instrument details with sparkline chart
-🧾 Raw data explorer (expandable JSON view)
-🛠️ Tech Stack
-React + TypeScript
-Tailwind CSS
-Custom Hooks
-Context API (state management)
-▶️ How to Run the Project
+---
 
-# 1. Clone the repository
+## 🚀 Features
 
-git clone git@github.com:piyushwta/market-dashboard.git
+- 📈 Real-time price updates _(simulated via WebSocket logic)_
+- 🔍 Debounced search for better performance
+- 🎯 Advanced filtering (sector, market status, sorting)
+- ⭐ Add/remove instruments from watchlist
+- 📱 Fully responsive (mobile-first design)
+- 📊 Instrument details with sparkline visualization
+- 🧾 Expandable raw data explorer (JSON viewer)
 
-# 2. Navigate to project
+---
 
-cd instrument-dashboard
+## 🛠️ Tech Stack
 
-# 3. Install dependencies
+- **Frontend:** React + TypeScript
+- **Styling:** Tailwind CSS
+- **State Management:** Context API
+- **Architecture:** Custom Hooks-based modular structure
 
+---
+
+## ▶️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/piyushwta/market-dashboard.git
+```
+
+### 2. Navigate to Project
+
+```bash
+cd market-dashboard
+```
+
+### 3. Install Dependencies
+
+```bash
 npm install
+```
 
-# 4. Start development server
+### 4. Run Development Server
 
+```bash
 npm run dev
+```
 
-App will run on:
+### 🌐 App URL
 
+```
 http://localhost:5173
-🏗️ Architecture Overview
+```
+
+---
+
+## 🏗️ Project Structure
+
+```
 components/
-layout/ → Layout (Header, Dashboard)
-instruments/ → List, Row, Filters
-details/ → Instrument details, charts, raw explorer
-watchlist/ → Watchlist UI
+  layout/         → Header, Dashboard
+  instruments/    → List, Row, Filters
+  details/        → Details, Sparkline, Raw Explorer
+  watchlist/      → Watchlist UI
 
 context/
-AppContext → Global state (instruments, watchlist)
+  AppContext      → Global state management
 
 hooks/
-useInstruments → Filtering, sorting logic
-useRealtime → Simulated live updates
-useDebounce → Optimized search input
+  useInstruments  → Filtering & sorting logic
+  useRealtime     → Simulated live updates
+  useDebounce     → Optimized search handling
 
 data/
-instruments.ts → Mock dataset
+  instruments.ts  → Mock dataset
 
 types/
-instrument.types.ts → Type definitions
+  instrument.types.ts
 
 utils/
-helpers.ts → Utility functions
-🔁 Data Flow
-useRealtime updates instrument prices
-Global state stored in AppContext
-useInstruments applies:
-search
-filters
-sorting
-UI components consume processed data
-⚙️ Assumptions Made
-Real-time data is simulated (no backend/WebSocket server)
-Dataset is relatively small (no virtualization implemented)
-Filters are client-side only
-Authentication/user management is not included
-Watchlist is stored in-memory (not persisted)
-🚧 Improvements (With More Time)
-🔥 Performance
-Virtualized list (for large datasets)
-Memoization optimizations
-Server-side filtering
-📊 Features
-Real API integration
-Historical charts with charting library
-Advanced analytics (volume trends, indicators)
-💾 Persistence
-Save watchlist to localStorage or backend
-User preferences storage
-🎨 UX Enhancements
-Dark mode
-Animations (price change flash)
-Drag & reorder watchlist
-Keyboard navigation
-📱 Mobile
-Bottom navigation (like trading apps)
-Gesture-based interactions
-🧠 Key Highlights
-Clean separation of concerns using hooks
-Scalable architecture for real-time apps
-Mobile-first responsive design
-Performance optimization using debouncing
-📌 Conclusion
+  helpers.ts
+```
 
-This project demonstrates building a scalable, responsive financial dashboard with modern frontend practices, focusing on performance, usability, and clean architecture.
+---
+
+## 🔁 Data Flow
+
+1. `useRealtime` simulates live price updates
+2. Data is stored in **AppContext (global state)**
+3. `useInstruments` applies:
+   - search
+   - filters
+   - sorting
+
+4. Processed data is rendered in UI components
+
+---
+
+## ⚙️ Assumptions
+
+- Real-time updates are simulated (no backend integration)
+- Dataset is small (no virtualization required)
+- Filtering is handled client-side
+- No authentication or user system
+- Watchlist is stored in-memory (non-persistent)
+
+---
+
+## 🚧 Future Improvements
+
+### 🔥 Performance
+
+- Virtualized lists for large datasets
+- Memoization optimizations
+- Server-side filtering
+
+### 📊 Features
+
+- Real API integration
+- Advanced charting (historical data)
+- Financial indicators & analytics
+
+### 💾 Persistence
+
+- Save watchlist in localStorage / backend
+- Store user preferences
+
+### 🎨 UX Enhancements
+
+- Dark mode
+- Price change animations
+- Drag & reorder watchlist
+- Keyboard navigation
+
+### 📱 Mobile Experience
+
+- Bottom navigation (like trading apps)
+- Gesture-based interactions
+
+---
+
+## 🧠 Key Highlights
+
+- Clean and scalable architecture using custom hooks
+- Mobile-first responsive design
+- Optimized search using debouncing
+- Separation of concerns across modules
+
+---
+
+## 📌 Summary
+
+This project demonstrates how to build a **scalable, responsive, and performance-focused dashboard** using modern frontend practices, with emphasis on clean architecture and user experience.
